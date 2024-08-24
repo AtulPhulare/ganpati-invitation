@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     background-color: #f4f4f9;
     font-family: 'Roboto', sans-serif;
@@ -7,7 +8,8 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: 40px auto;
     background-color: #ffffff;
     padding: 30px;
@@ -40,11 +42,11 @@ body {
 }
 
 .header img {
-    width: 120px;
-    height: 120px;
+    width: 150px; /* Increased size */
+    height: 150px; /* Increased size */
     border-radius: 50%;
     border: 3px solid #fff; /* White border around the image */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.7); /* Glowing effect */
 }
 
 .header h1 {
@@ -150,7 +152,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: rgba(255, 255, 255, 0.8); Semi-transparent overlay */
     z-index: 1;
 }
 
@@ -160,13 +161,13 @@ body {
 }
 
 .family-members .member {
-    width: 150px;
-    height: 150px;
+    width: 180px; /* Increased size */
+    height: 180px; /* Increased size */
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 10px;
+    margin: 0 15px; /* Adjusted margin */
     border: 3px solid #d4af37;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(212, 175, 55, 0.7); /* Glowing effect */
 }
 
 .family-members .member img {
@@ -178,4 +179,90 @@ body {
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .invitation h2 {
+        font-size: 1.2em;
+    }
+
+    .invitation h1 {
+        font-size: 1.5em;
+    }
+
+    .invitation p {
+        font-size: 1em;
+    }
+
+    .program-schedule li, .special-attractions li {
+        font-size: 1em;
+    }
+
+    .footer p {
+        font-size: 1em;
+    }
+
+    .family-members .member {
+        width: 120px;
+        height: 120px;
+    }
+
+    .family-members .scrolling-content {
+        animation: scroll 15s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .header img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .invitation h2 {
+        font-size: 1em;
+    }
+
+    .invitation h1 {
+        font-size: 1.2em;
+    }
+
+    .invitation p {
+        font-size: 0.9em;
+    }
+
+    .program-schedule li, .special-attractions li {
+        font-size: 0.9em;
+    }
+
+    .footer p {
+        font-size: 0.9em;
+    }
+
+    .family-members .member {
+        width: 100px;
+        height: 100px;
+    }
+
+    .family-members .scrolling-content {
+        animation: scroll 10s linear infinite;
+    }
 }
