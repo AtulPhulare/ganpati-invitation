@@ -39,14 +39,32 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    position: relative; /* Position relative to control the positioning of the glow */
 }
 
 .header img {
-    width: 150px; /* Increased size */
-    height: 150px; /* Increased size */
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
     border-radius: 50%;
-    border: 3px solid #fff; /* White border around the image */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.7); /* Glowing effect */
+    border: 5px solid #fff; /* White border around the image */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.7); /* Glowing effect */
+    position: relative; /* Ensure the glow effect applies correctly */
+    z-index: 1; /* Bring the image in front of the glow */
+    object-fit: cover; 
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px; /* Larger size for glowing effect */
+    height: 240px; /* Larger size for glowing effect */
+    background: rgba(212, 175, 55, 0.3); /* Semi-transparent gold color for glow */
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.7); /* Larger glow */
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Place behind the image */
 }
 
 .header h1 {
