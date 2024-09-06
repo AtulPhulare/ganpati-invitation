@@ -1,10 +1,10 @@
-/* Base styles */
 body {
-    background-color: #f4f4f9;
+    background-color: #f7f7fa;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
@@ -13,65 +13,34 @@ body {
     margin: 40px auto;
     background-color: #ffffff;
     padding: 30px;
-    border: 2px solid #d4af37; /* Gold border for elegance */
+    border: 2px solid #d4af37; 
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden;
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('path-to-decorative-background-image.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.1; /* Light overlay for elegance */
-    z-index: -1;
 }
 
 .header {
     text-align: center;
-    background-color: #d4af37; /* Gold background for header */
+    background-color: #d4af37;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
-    position: relative; /* Position relative to control the positioning of the glow */
 }
 
 .header img {
-    width: 250px; /* Increased size */
-    height: 250px; /* Increased size */
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    border: 5px solid #fff; /* White border around the image */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.7); /* Glowing effect */
-    position: relative; /* Ensure the glow effect applies correctly */
-    z-index: 1; /* Bring the image in front of the glow */
-    object-fit: cover; 
-}
-
-.header::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 240px; /* Larger size for glowing effect */
-    height: 240px; /* Larger size for glowing effect */
-    background: rgba(212, 175, 55, 0.3); /* Semi-transparent gold color for glow */
-    border-radius: 50%;
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.7); /* Larger glow */
-    transform: translate(-50%, -50%);
-    z-index: 0; /* Place behind the image */
+    border: 5px solid #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.7); 
+    object-fit: cover;
 }
 
 .header h1 {
     font-family: 'Great Vibes', cursive;
     color: #fff;
     margin: 10px 0;
-    font-size: 2.5em;
+    font-size: clamp(2em, 4vw, 3.5em);
 }
 
 .invitation {
@@ -82,70 +51,46 @@ body {
 .invitation h2 {
     font-family: 'Great Vibes', cursive;
     color: #d4af37;
-    margin: 10px 0;
-    font-size: 1.5em;
+    font-size: clamp(1.2em, 2vw, 1.8em);
 }
 
 .invitation h1 {
-    font-size: 2em;
-    color: #555;
+    font-size: clamp(1.5em, 2.5vw, 2.5em);
+    color: #d4af37;
     margin: 10px 0;
 }
 
 .invitation p {
-    font-size: 1.2em;
-    margin: 10px 0;
+    font-size: clamp(1em, 1.8vw, 1.2em);
 }
 
-.program-schedule, .special-attractions, .rsvp, .family-members {
+.program-schedule, .family-members, .address-section {
     padding: 20px;
-    border-top: 2px solid #d4af37;
     margin-top: 20px;
+    border-top: 2px solid #d4af37;
 }
 
-.program-schedule h2, .special-attractions h2, .rsvp h2, .family-members h2 {
+.program-schedule h2, .family-members h2, .address-section h2 {
     font-family: 'Great Vibes', cursive;
     color: #d4af37;
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    text-align: center;
+    font-size: clamp(1.2em, 2.2vw, 1.8em);
 }
 
-.program-schedule ul, .special-attractions ul {
+.program-schedule ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     text-align: center;
 }
 
-.program-schedule li, .special-attractions li {
+.program-schedule li {
     margin-bottom: 10px;
-    font-size: 1.2em;
-    color: #555;
-}
-
-.rsvp p {
-    font-size: 1.2em;
-    color: #333;
-    text-align: center;
-}
-
-.footer {
-    background-color: #d4af37;
-    padding: 15px;
-    border-top: 2px solid #fff;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
-}
-
-.footer p {
-    margin: 5px 0;
-    font-size: 1.2em;
-    color: #fff;
+    font-size: clamp(1em, 1.6vw, 1.2em);
 }
 
 .family-members {
     padding: 20px 0;
-    background-color: #f9f9f9; /* Light background for the section */
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
     position: relative;
@@ -161,126 +106,84 @@ body {
     display: flex;
     overflow: hidden;
     position: relative;
-}
-
-.family-members .scrolling-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1;
 }
 
 .family-members .scrolling-content {
     display: flex;
+    width: calc(180px * 6 + 15px * 5); /* Adjust according to the number of images and their margins */
     animation: scroll 20s linear infinite;
 }
 
-.family-members .member {
-    width: 180px; /* Increased size */
-    height: 180px; /* Increased size */
+.family-members .scrolling-content .member {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 15px; /* Adjusted margin */
+    margin: 0 15px; /* Adjust margin between images */
     border: 3px solid #d4af37;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(212, 175, 55, 0.7); /* Glowing effect */
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(212, 175, 55, 0.7); */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    display: flex; /* Ensure content inside is centered */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
-.family-members .member img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.family-members .scrolling-content .member img {
+    width: 100%; /* Ensure image takes up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Ensure image is clipped to a circle */
+    object-fit: cover; /* Ensure the image covers the container */  
 }
 
+/* Keyframes to move the images horizontally */
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .header img {
-        width: 120px;
-        height: 120px;
+    0% {
+        transform: translateX(0);
     }
-
-    .header h1 {
-        font-size: 2em;
-    }
-
-    .invitation h2 {
-        font-size: 1.2em;
-    }
-
-    .invitation h1 {
-        font-size: 1.5em;
-    }
-
-    .invitation p {
-        font-size: 1em;
-    }
-
-    .program-schedule li, .special-attractions li {
-        font-size: 1em;
-    }
-
-    .footer p {
-        font-size: 1em;
-    }
-
-    .family-members .member {
-        width: 120px;
-        height: 120px;
-    }
-
-    .family-members .scrolling-content {
-        animation: scroll 15s linear infinite;
+    100% {
+        transform: translateX(-100%); /* Adjust based on the width of the content */
     }
 }
 
-@media (max-width: 480px) {
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
 
-    .header img {
-        width: 100px;
-        height: 100px;
-    }
+.address-section {
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #d4af37;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
 
-    .header h1 {
-        font-size: 1.8em;
-    }
+.address-section h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #d4af37;
+    font-size: clamp(1.2em, 2vw, 1.8em);
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-    .invitation h2 {
-        font-size: 1em;
-    }
+.address-section p {
+    font-size: clamp(1em, 1.6vw, 1.2em);
+    margin: 0;
+    text-align: center;
+    color: #555;
+}
 
-    .invitation h1 {
-        font-size: 1.2em;
-    }
+.map-container {
+    margin: 20px auto;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 100%;
+}
 
-    .invitation p {
-        font-size: 0.9em;
-    }
 
-    .program-schedule li, .special-attractions li {
-        font-size: 0.9em;
-    }
-
-    .footer p {
-        font-size: 0.9em;
-    }
-
-    .family-members .member {
-        width: 100px;
-        height: 100px;
-    }
-
-    .family-members .scrolling-content {
-        animation: scroll 10s linear infinite;
-    }
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #d4af37;
+    color: #fff;
+    font-size: clamp(1.2em, 1.8vw, 1.4em);
+    border-radius: 0 0 10px 10px;
 }
